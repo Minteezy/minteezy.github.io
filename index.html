@@ -29,7 +29,7 @@
         </div>
 
         <div class="button-row">
-          <button class="primary-btn" onclick="goToPage(2)">Yes 💕</button>
+          <button class="primary-btn" onclick="showYesPopup()">Yes 💕</button>
           <button id="noBtn" class="no-btn">No 😝</button>
         </div>
 
@@ -37,6 +37,21 @@
       </div>
     </section>
 
+    <!-- YES popup -->
+    <div id="yesPopup" class="popup-overlay hidden">
+      <div class="popup-card">
+        <button class="close-popup" onclick="goToPage(2)">×</button>
+        <h2>Yesssss!!! 💖💖💖</h2>
+        <p>I knew you would say yes hehe 🥰</p>
+        <img
+          class="popup-gif"
+          src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+          alt="Happy cute cat gif"
+        />
+        <button class="primary-btn wide-btn" onclick="goToPage(2)">Choose our date activity </button>
+      </div>
+    </div>
+	
     <!-- Page 2: Choose the date place -->
     <section id="page-2" class="page">
       <div class="glass-card">
@@ -45,7 +60,7 @@
           <span class="step-pill">Step 2 of 3</span>
         </div>
 
-        <h2>Yay! Choose our date place 💌</h2>
+        <h2>Yay! Choose our date activity 💌</h2>
         <p class="subtitle">Pick one place you want to go. I promise to make it special.</p>
 
         <div class="option-grid place-grid">
