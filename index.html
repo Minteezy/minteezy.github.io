@@ -13,124 +13,134 @@
   </div>
 
   <main class="app">
+    <!-- Page 1: Date invitation -->
     <section id="page-1" class="page active">
       <div class="glass-card hero-card">
         <p class="eyebrow">A very important question...</p>
         <h1>Would you like to go on a date with me? 🥺💖</h1>
+
         <div class="hero-visual">
-          <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Cute romantic animation" />
+          <!-- Replace this GIF URL with your own photo/GIF if you want -->
+          <img
+            src="F236B10C-A5D2-4FA3-AF2B-FE311377D9D8.gif"
+            alt="Cute romantic animation"
+          />
           <div class="polaroid-note">You + Me = Best date ever ✨</div>
         </div>
+
         <div class="button-row">
           <button class="primary-btn" onclick="goToPage(2)">Yes 💕</button>
           <button id="noBtn" class="no-btn">No 😝</button>
         </div>
+
         <p class="tiny-text">Tip: Try hovering the No button 😆</p>
       </div>
     </section>
 
+    <!-- Page 2: Choose the date place -->
     <section id="page-2" class="page">
       <div class="glass-card">
         <div class="top-bar">
           <button class="back-btn" onclick="goToPage(1)">← Back</button>
           <span class="step-pill">Step 2 of 3</span>
         </div>
+
         <h2>Yay! Choose our date place 💌</h2>
         <p class="subtitle">Pick one place you want to go. I promise to make it special.</p>
 
-        <div class="mrt-card">
-          <div class="mrt-title-row">
-            <div>
-              <p class="map-eyebrow">Cute travel plan</p>
-              <h3>Mini Singapore MRT Date Map 🚇</h3>
-            </div>
-            <div class="map-legend">
-              <span><i class="legend-line green"></i>EWL</span>
-              <span><i class="legend-line blue"></i>DTL</span>
-              <span><i class="legend-line red"></i>NSL</span>
-              <span><i class="legend-line teal"></i>TEL</span>
-            </div>
-          </div>
-
-          <div class="mrt-map-wrap" aria-label="Stylized MRT map for date ideas">
-            <svg class="mrt-map" viewBox="0 0 980 470" role="img">
-              <defs>
-                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#6d2b4c" flood-opacity="0.18" />
-                </filter>
-                <linearGradient id="cityGlow" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#fff176" />
-                  <stop offset="1" stop-color="#ffb74d" />
-                </linearGradient>
-              </defs>
-
-              <circle cx="180" cy="95" r="72" fill="#ffe1eb" opacity=".55" />
-              <circle cx="790" cy="330" r="105" fill="#e1f7ff" opacity=".55" />
-              <circle cx="505" cy="225" r="92" fill="#fff1c9" opacity=".55" />
-
-              <path class="line green-line" d="M85 275 C210 260, 350 240, 505 225 S760 195, 910 175" />
-              <path class="line blue-line" d="M170 360 C285 300, 395 255, 505 225 S700 125, 825 70" />
-              <path class="line red-line" d="M155 92 C245 190, 350 300, 455 410 S555 520, 620 555" />
-              <path class="line teal-line" d="M610 60 C645 150, 685 252, 730 342 S805 505, 850 590" />
-
-              <circle cx="505" cy="225" r="30" fill="none" stroke="#ffec3d" stroke-width="18" opacity=".9" />
-              <circle cx="505" cy="225" r="28" fill="#ffffff" stroke="#12b886" stroke-width="6" />
-
-              <g filter="url(#softShadow)">
-                <g class="station major" transform="translate(505 225)"><circle r="12"/><text y="-24">City Hall</text></g>
-                <g class="station green" transform="translate(85 275)"><circle r="8"/><text x="-45" y="-18">Jurong East</text></g>
-                <g class="station green" transform="translate(690 205)"><circle r="8"/><text x="-20" y="-20">Bugis</text></g>
-                <g class="station green" transform="translate(805 190)"><circle r="8"/><text x="-35" y="42">Paya Lebar</text></g>
-                <g class="station green" transform="translate(910 175)"><circle r="8"/><text x="-40" y="-20">Changi</text></g>
-                <g class="station blue" transform="translate(170 360)"><circle r="8"/><text x="-62" y="38">Beauty World</text></g>
-                <g class="station blue" transform="translate(380 290)"><circle r="8"/><text x="-42" y="40">Botanic</text></g>
-                <g class="station blue" transform="translate(560 195)"><circle r="8"/><text x="-38" y="-24">Bencoolen</text></g>
-                <g class="station blue" transform="translate(825 70)"><circle r="8"/><text x="-35" y="-22">Expo</text></g>
-                <g class="station red" transform="translate(155 92)"><circle r="8"/><text x="-48" y="-22">Woodlands</text></g>
-                <g class="station red" transform="translate(275 218)"><circle r="8"/><text x="-30" y="-22">Bishan</text></g>
-                <g class="station red" transform="translate(425 378)"><circle r="8"/><text x="-36" y="42">Marina Bay</text></g>
-                <g class="station teal" transform="translate(610 60)"><circle r="8"/><text x="-35" y="-22">Stevens</text></g>
-                <g class="station teal" transform="translate(675 245)"><circle r="8"/><text x="-38" y="42">Gardens</text></g>
-                <g class="station teal" transform="translate(755 395)"><circle r="8"/><text x="-58" y="42">Marine Parade</text></g>
-              </g>
-              <g class="line-labels">
-                <text x="880" y="146" class="green-label">EWL</text>
-                <text x="125" y="410" class="blue-label">DTL</text>
-                <text x="116" y="50" class="red-label">NSL</text>
-                <text x="798" y="430" class="teal-label">TEL</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
         <div class="option-grid place-grid">
-          <button class="option-card" onclick="choosePlace('East Coast Park picnic 🌊', this)"><span class="emoji">🌊</span><strong>East Coast Park</strong><small>Picnic, sea breeze, sunset walk</small></button>
-          <button class="option-card" onclick="choosePlace('Movie date 🎬', this)"><span class="emoji">🎬</span><strong>Movie Date</strong><small>Popcorn, cozy seats, hand holding</small></button>
-          <button class="option-card" onclick="choosePlace('Cafe hopping ☕', this)"><span class="emoji">☕</span><strong>Cafe Hopping</strong><small>Cute photos and sweet desserts</small></button>
-          <button class="option-card" onclick="choosePlace('Museum date 🎨', this)"><span class="emoji">🎨</span><strong>Museum Date</strong><small>Pretty exhibits and even prettier you</small></button>
-          <button class="option-card" onclick="choosePlace('Bowling fun 🎳', this)"><span class="emoji">🎳</span><strong>Bowling</strong><small>Winner gets extra dessert</small></button>
-          <button class="option-card" onclick="choosePlace('Surprise adventure 🎁', this)"><span class="emoji">🎁</span><strong>Surprise Me</strong><small>I plan everything for you</small></button>
+          <button class="option-card" onclick="choosePlace('East Coast Park picnic 🌊', this)">
+            <span class="emoji">🌊</span>
+            <strong>East Coast Park</strong>
+            <small>Picnic, sea breeze, sunset walk</small>
+          </button>
+
+          <button class="option-card" onclick="choosePlace('Movie date 🎬', this)">
+            <span class="emoji">🎬</span>
+            <strong>Movie Date</strong>
+            <small>Popcorn, cozy seats, hand holding</small>
+          </button>
+
+          <button class="option-card" onclick="choosePlace('Cafe hopping ☕', this)">
+            <span class="emoji">☕</span>
+            <strong>Cafe Hopping</strong>
+            <small>Cute photos and sweet desserts</small>
+          </button>
+
+          <button class="option-card" onclick="choosePlace('Museum date 🎨', this)">
+            <span class="emoji">🎨</span>
+            <strong>Museum Date</strong>
+            <small>Pretty exhibits and even prettier you</small>
+          </button>
+
+          <button class="option-card" onclick="choosePlace('Bowling fun 🎳', this)">
+            <span class="emoji">🎳</span>
+            <strong>Bowling</strong>
+            <small>Winner gets extra dessert</small>
+          </button>
+
+          <button class="option-card" onclick="choosePlace('Surprise adventure 🎁', this)">
+            <span class="emoji">🎁</span>
+            <strong>Surprise Me</strong>
+            <small>I plan everything for you</small>
+          </button>
         </div>
-        <button id="placeNextBtn" class="primary-btn wide-btn disabled" onclick="goToFoodPage()" disabled>Next: Food time 🍽️</button>
+
+        <button id="placeNextBtn" class="primary-btn wide-btn disabled" onclick="goToFoodPage()" disabled>
+          Next: Food time 🍽️
+        </button>
       </div>
     </section>
 
+    <!-- Page 3: Choose food -->
     <section id="page-3" class="page">
       <div class="glass-card">
         <div class="top-bar">
           <button class="back-btn" onclick="goToPage(2)">← Back</button>
           <span class="step-pill">Step 3 of 3</span>
         </div>
+
         <h2>What do you want to eat? 😋</h2>
         <p class="subtitle">Choose your craving and I will handle the rest.</p>
+
         <div class="option-grid food-grid">
-          <button class="option-card food" onclick="chooseFood('Sushi 🍣', this)"><span class="emoji">🍣</span><strong>Sushi</strong><small>Fresh, cute, and fancy</small></button>
-          <button class="option-card food" onclick="chooseFood('Korean BBQ 🥩', this)"><span class="emoji">🥩</span><strong>Korean BBQ</strong><small>I cook, you enjoy</small></button>
-          <button class="option-card food" onclick="chooseFood('Pizza 🍕', this)"><span class="emoji">🍕</span><strong>Pizza</strong><small>Cheesy date, cheesy us</small></button>
-          <button class="option-card food" onclick="chooseFood('Hotpot 🍲', this)"><span class="emoji">🍲</span><strong>Hotpot</strong><small>Warm food, warm heart</small></button>
-          <button class="option-card food" onclick="chooseFood('Dessert date 🍰', this)"><span class="emoji">🍰</span><strong>Dessert</strong><small>Cakes, waffles, ice cream</small></button>
-          <button class="option-card food" onclick="chooseFood('You choose, princess 👑', this)"><span class="emoji">👑</span><strong>You Choose</strong><small>Your wish is my command</small></button>
+          <button class="option-card food" onclick="chooseFood('Sushi 🍣', this)">
+            <span class="emoji">🍣</span>
+            <strong>Sushi</strong>
+            <small>Fresh, cute, and fancy</small>
+          </button>
+
+          <button class="option-card food" onclick="chooseFood('Korean BBQ 🥩', this)">
+            <span class="emoji">🥩</span>
+            <strong>Korean BBQ</strong>
+            <small>I cook, you enjoy</small>
+          </button>
+
+          <button class="option-card food" onclick="chooseFood('Pizza 🍕', this)">
+            <span class="emoji">🍕</span>
+            <strong>Pizza</strong>
+            <small>Cheesy date, cheesy us</small>
+          </button>
+
+          <button class="option-card food" onclick="chooseFood('Hotpot 🍲', this)">
+            <span class="emoji">🍲</span>
+            <strong>Hotpot</strong>
+            <small>Warm food, warm heart</small>
+          </button>
+
+          <button class="option-card food" onclick="chooseFood('Dessert date 🍰', this)">
+            <span class="emoji">🍰</span>
+            <strong>Dessert</strong>
+            <small>Cakes, waffles, ice cream</small>
+          </button>
+
+          <button class="option-card food" onclick="chooseFood('You choose, princess 👑', this)">
+            <span class="emoji">👑</span>
+            <strong>You Choose</strong>
+            <small>Your wish is my command</small>
+          </button>
         </div>
+
         <div id="finalResult" class="final-result hidden">
           <h3>It is a date! 💖</h3>
           <p id="summaryText"></p>
@@ -140,22 +150,10 @@
     </section>
   </main>
 
-  <div id="dateModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close popup">×</button>
-      <div class="modal-heart">💖</div>
-      <h2 id="modalTitle">Yesss! It is a date!</h2>
-      <p id="modalSummary"></p>
-      <div class="modal-actions">
-        <button class="primary-btn" onclick="closeModal()">Awww okay 💕</button>
-        <button class="secondary-btn" onclick="restart()">Choose again 🔁</button>
-      </div>
-    </div>
-  </div>
-
   <script>
     let selectedPlace = "";
     let selectedFood = "";
+
     const noBtn = document.getElementById("noBtn");
 
     function moveNoButton() {
@@ -163,11 +161,13 @@
       const maxY = window.innerHeight - noBtn.offsetHeight - 30;
       const randomX = Math.max(10, Math.floor(Math.random() * maxX));
       const randomY = Math.max(10, Math.floor(Math.random() * maxY));
+
       noBtn.style.position = "fixed";
       noBtn.style.left = randomX + "px";
       noBtn.style.top = randomY + "px";
       noBtn.textContent = "Nope 😆";
     }
+
     noBtn.addEventListener("mouseover", moveNoButton);
     noBtn.addEventListener("click", moveNoButton);
 
@@ -181,6 +181,7 @@
       selectedPlace = place;
       document.querySelectorAll(".place-grid .option-card").forEach(card => card.classList.remove("selected"));
       element.classList.add("selected");
+
       const nextBtn = document.getElementById("placeNextBtn");
       nextBtn.disabled = false;
       nextBtn.classList.remove("disabled");
@@ -195,22 +196,17 @@
       selectedFood = food;
       document.querySelectorAll(".food-grid .option-card").forEach(card => card.classList.remove("selected"));
       element.classList.add("selected");
-      const summary = `We are going for <strong>${selectedPlace}</strong><br>and eating <strong>${selectedFood}</strong>.<br><br>I cannot wait to see you 💕`;
-      document.getElementById("finalResult").classList.remove("hidden");
-      document.getElementById("summaryText").innerHTML = summary;
-      document.getElementById("modalSummary").innerHTML = summary;
-      document.getElementById("dateModal").classList.remove("hidden");
-      createConfetti();
-    }
 
-    function closeModal() {
-      document.getElementById("dateModal").classList.add("hidden");
+      document.getElementById("finalResult").classList.remove("hidden");
+      document.getElementById("summaryText").innerHTML =
+        `We are going for <strong>${selectedPlace}</strong><br>and eating <strong>${selectedFood}</strong>.<br><br>I cannot wait to see you 💕`;
+
+      createConfetti();
     }
 
     function restart() {
       selectedPlace = "";
       selectedFood = "";
-      closeModal();
       document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
       document.getElementById("finalResult").classList.add("hidden");
       document.getElementById("placeNextBtn").disabled = true;
