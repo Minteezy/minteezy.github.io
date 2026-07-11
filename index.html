@@ -13,7 +13,7 @@
   </div>
 
   <main class="app">
-    <!-- Page 1 -->
+    <!-- Page 1: Ask her out -->
     <section id="page-1" class="page active">
       <div class="card hero-card">
         <p class="badge">A tiny question for you...</p>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="button-row">
-          <button class="primary-btn" onclick="goToPage(2)">Yes, of course 💕</button>
+          <button class="primary-btn" onclick="showYesPopup()">Yes, of course 💕</button>
           <button id="noBtn" class="no-btn">No 😝</button>
         </div>
 
@@ -34,7 +34,7 @@
       </div>
     </section>
 
-    <!-- Page 2 -->
+    <!-- Page 2: Choose date place -->
     <section id="page-2" class="page">
       <div class="card">
         <div class="top-bar">
@@ -45,74 +45,38 @@
         <h2>Yay! Choose our date place 💌</h2>
         <p class="subtitle">Pick where you want us to go. I will handle the rest.</p>
 
-        <div class="date-showcase">
-          <div class="mini-card big">
-            <span>🌅</span>
-            <div>
-              <strong>Romantic Date Mission</strong>
-              <p>Choose one place below and unlock the food page.</p>
-            </div>
-          </div>
-          <div class="mini-card">
-            <span>📸</span>
-            <div>
-              <strong>Cute Photos</strong>
-              <p>Mandatory couple pictures.</p>
-            </div>
-          </div>
-          <div class="mini-card">
-            <span>🎁</span>
-            <div>
-              <strong>Surprise</strong>
-              <p>Maybe there is a small surprise too.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="option-grid place-grid">
-          <button class="option-card beach" onclick="choosePlace('East Coast Park picnic 🌊', this)">
+        <div class="option-grid place-grid simple-place-grid">
+          <button class="option-card beach" onclick="choosePlace('East Coast Park 🌊', this)">
             <span class="emoji">🌊</span>
             <strong>East Coast Park</strong>
-            <small>Sea breeze, picnic mat, sunset walk</small>
+            <small>Sea breeze, sunset walk, cute photos</small>
           </button>
 
-          <button class="option-card movie" onclick="choosePlace('Movie date 🎬', this)">
+          <button class="option-card movie" onclick="choosePlace('Movie Date 🎬', this)">
             <span class="emoji">🎬</span>
             <strong>Movie Date</strong>
             <small>Popcorn, cozy seats, hand holding</small>
           </button>
 
-          <button class="option-card cafe" onclick="choosePlace('Cafe hopping ☕', this)">
+          <button class="option-card cafe" onclick="choosePlace('Cafe Hopping ☕', this)">
             <span class="emoji">☕</span>
             <strong>Cafe Hopping</strong>
             <small>Cute drinks, dessert, pretty photos</small>
           </button>
 
-          <button class="option-card museum" onclick="choosePlace('Museum date 🎨', this)">
-            <span class="emoji">🎨</span>
-            <strong>Museum Date</strong>
-            <small>Pretty exhibits and pretty memories</small>
-          </button>
-
-          <button class="option-card bowling" onclick="choosePlace('Bowling fun 🎳', this)">
+          <button class="option-card bowling" onclick="choosePlace('Bowling 🎳', this)">
             <span class="emoji">🎳</span>
             <strong>Bowling</strong>
             <small>Winner gets extra dessert</small>
           </button>
 
-          <button class="option-card picnic" onclick="choosePlace('Picnic date 🧺', this)">
+          <button class="option-card picnic" onclick="choosePlace('Picnic Date 🧺', this)">
             <span class="emoji">🧺</span>
             <strong>Picnic Date</strong>
             <small>Snacks, blanket, and chill time</small>
           </button>
 
-          <button class="option-card flyer" onclick="choosePlace('Singapore Flyer date 🎡', this)">
-            <span class="emoji">🎡</span>
-            <strong>Singapore Flyer</strong>
-            <small>City view and romantic vibes</small>
-          </button>
-
-          <button class="option-card surprise" onclick="choosePlace('Surprise adventure 🎁', this)">
+          <button class="option-card surprise" onclick="choosePlace('Surprise Me 🎁', this)">
             <span class="emoji">🎁</span>
             <strong>Surprise Me</strong>
             <small>I plan everything for you</small>
@@ -125,7 +89,7 @@
       </div>
     </section>
 
-    <!-- Page 3 -->
+    <!-- Page 3: Choose food -->
     <section id="page-3" class="page">
       <div class="card">
         <div class="top-bar">
@@ -161,7 +125,7 @@
             <small>Warm food, warm heart</small>
           </button>
 
-          <button class="option-card" onclick="chooseFood('Dessert date 🍰', this)">
+          <button class="option-card" onclick="chooseFood('Dessert Date 🍰', this)">
             <span class="emoji">🍰</span>
             <strong>Dessert</strong>
             <small>Cakes, waffles, ice cream</small>
@@ -173,7 +137,7 @@
             <small>Comfort food date</small>
           </button>
 
-          <button class="option-card" onclick="chooseFood('Thai food 🌶️', this)">
+          <button class="option-card" onclick="chooseFood('Thai Food 🌶️', this)">
             <span class="emoji">🌶️</span>
             <strong>Thai Food</strong>
             <small>Spicy like our love story</small>
@@ -189,14 +153,30 @@
     </section>
   </main>
 
-  <!-- Final popup -->
+  <!-- Popup after clicking Yes -->
+  <div id="yesModal" class="modal hidden">
+    <div class="modal-card yay-card">
+      <button class="close-btn" onclick="closeYesPopup()">×</button>
+      <div class="modal-gif">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cute excited gif" />
+      </div>
+      <h2>YAYYYYYYY!!! 💖💖💖</h2>
+      <p>
+        I knew you'd say yes! 🥰<br><br>
+        Let's plan our perfect date together ✨
+      </p>
+      <button class="primary-btn" onclick="startDatePlan()">Let's Go! 💌</button>
+    </div>
+  </div>
+
+  <!-- Final popup after choosing food -->
   <div id="finalModal" class="modal hidden">
     <div class="modal-card">
-      <button class="close-btn" onclick="closeModal()">×</button>
+      <button class="close-btn" onclick="closeFinalPopup()">×</button>
       <div class="modal-gif">
         <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Happy celebration gif" />
       </div>
-      <h2>Yessss! It is a date! 💖</h2>
+      <h2>YASSSS! IT'S A DATE! 💖</h2>
       <p id="modalText"></p>
       <p class="screenshot-note">💌 Screenshot this and send it to your boyfriend 😆</p>
       <div class="modal-actions">
@@ -227,6 +207,20 @@
     noBtn.addEventListener("mouseover", moveNoButton);
     noBtn.addEventListener("click", moveNoButton);
 
+    function showYesPopup() {
+      document.getElementById("yesModal").classList.remove("hidden");
+      createConfetti();
+    }
+
+    function closeYesPopup() {
+      document.getElementById("yesModal").classList.add("hidden");
+    }
+
+    function startDatePlan() {
+      closeYesPopup();
+      goToPage(2);
+    }
+
     function goToPage(pageNumber) {
       document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
       document.getElementById(`page-${pageNumber}`).classList.add("active");
@@ -256,22 +250,26 @@
       copiedText = `I chose:\n📍 ${selectedPlace}\n🍽️ ${selectedFood}\n\nGet ready ❤️`;
 
       document.getElementById("modalText").innerHTML =
-        `We are going to:<br><strong>📍 ${selectedPlace}</strong><br><br>` +
-        `And eating:<br><strong>🍽️ ${selectedFood}</strong><br><br>` +
-        `I cannot wait to see you 💕`;
+        `<span class="label">📍 Date Place</span><br>` +
+        `<strong>${selectedPlace}</strong><br><br>` +
+        `<span class="label">🍽️ Food</span><br>` +
+        `<strong>${selectedFood}</strong><br><br>` +
+        `💕 I can't wait to see you!<br>` +
+        `See you soon, beautiful 🥰`;
 
       document.getElementById("finalModal").classList.remove("hidden");
       createConfetti();
     }
 
-    function closeModal() {
+    function closeFinalPopup() {
       document.getElementById("finalModal").classList.add("hidden");
     }
 
     function restart() {
       selectedPlace = "";
       selectedFood = "";
-      closeModal();
+      closeYesPopup();
+      closeFinalPopup();
       document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
       const nextBtn = document.getElementById("placeNextBtn");
       nextBtn.disabled = true;
