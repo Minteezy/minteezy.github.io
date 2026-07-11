@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Next Date ❤️</title>
+    style.css
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>❤️ Choose Our Next Date ❤️</h1>
+        <p class="subtitle">
+            Hi Beautiful ❤️<br>
+            Pick where we're going next!
+        </p>
+
+        <div class="date-grid">
+            <button onclick="selectDate('🌊 East Coast Park Picnic')">
+                🌊 East Coast Park Picnic
+            </button>
+
+            <button onclick="selectDate('🍣 Sushi Date')">
+                🍣 Sushi Date
+            </button>
+
+            <button onclick="selectDate('🎬 Movie Night')">
+                🎬 Movie Night
+            </button>
+
+            <button onclick="selectDate('☕ Café Hopping')">
+                ☕ Café Hopping
+            </button>
+
+            <button onclick="selectDate('🎳 Bowling Fun')">
+                🎳 Bowling Fun
+            </button>
+
+            <button onclick="selectDate('🎨 ArtScience Museum')">
+                🎨 ArtScience Museum
+            </button>
+        </div>
+
+        <button class="surprise-btn" onclick="surpriseMe()">
+            🎁 Surprise Me
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        const dates = [
+            "🌊 East Coast Park Picnic",
+            "🍣 Sushi Date",
+            "🎬 Movie Night",
+            "☕ Café Hopping",
+            "🎳 Bowling Fun",
+            "🎨 ArtScience Museum"
+        ];
+
+        function selectDate(date) {
+            document.getElementById("result").innerHTML =
+                `❤️ Yay! Our next date is:<br><strong>${date}</strong>`;
+        }
+
+        function surpriseMe() {
+            const randomDate =
+                dates[Math.floor(Math.random() * dates.length)];
+
+            document.getElementById("result").innerHTML =
+                `🎉 Surprise!<br><strong>${randomDate}</strong>`;
+        }
+    </script>
+
+</body>
+</html>
