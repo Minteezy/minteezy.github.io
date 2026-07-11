@@ -20,16 +20,16 @@
         <h1>Would you like to go on a date with me? 🥺💖</h1>
 
         <div class="hero-visual">
-          <!-- Replace this GIF URL with your own photo/GIF if you want -->
+          <!-- Replace this GIF with your own photo/GIF if you want -->
           <img
-            src="F236B10C-A5D2-4FA3-AF2B-FE311377D9D8.gif"
+            src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif"
             alt="Cute romantic animation"
           />
           <div class="polaroid-note">You + Me = Best date ever ✨</div>
         </div>
 
         <div class="button-row">
-          <button class="primary-btn" onclick="goToPage(2)">Yes 💕</button>
+          <button class="primary-btn" onclick="showYesPopup()">Yes 💕</button>
           <button id="noBtn" class="no-btn">No 😝</button>
         </div>
 
@@ -37,62 +37,83 @@
       </div>
     </section>
 
-    <!-- Page 2: Choose the date place -->
+    <!-- YES popup -->
+    <div id="yesPopup" class="popup-overlay hidden">
+      <div class="popup-card">
+        <button class="close-popup" onclick="goToPage(2)">×</button>
+        <h2>Yesssss!!! 💖💖💖</h2>
+        <p>I knew you would say yes hehe 🥰</p>
+        <img
+          class="popup-gif"
+          src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+          alt="Happy cute cat gif"
+        />
+        <button class="primary-btn wide-btn" onclick="goToPage(2)">Choose our MRT date place 🚇</button>
+      </div>
+    </div>
+
+    <!-- Page 2: Choose MRT location -->
     <section id="page-2" class="page">
-      <div class="glass-card">
+      <div class="glass-card map-card">
         <div class="top-bar">
           <button class="back-btn" onclick="goToPage(1)">← Back</button>
           <span class="step-pill">Step 2 of 3</span>
         </div>
 
-        <h2>Yay! Choose our date place 💌</h2>
-        <p class="subtitle">Pick one place you want to go. I promise to make it special.</p>
+        <h2>Pick our Singapore MRT date location 🚇</h2>
+        <p class="subtitle">Click one MRT station on this cute simplified map.</p>
 
-        <div class="option-grid place-grid">
-          <button class="option-card" onclick="choosePlace('East Coast Park picnic 🌊', this)">
-            <span class="emoji">🌊</span>
-            <strong>East Coast Park</strong>
-            <small>Picnic, sea breeze, sunset walk</small>
-          </button>
-
-          <button class="option-card" onclick="choosePlace('Movie date 🎬', this)">
-            <span class="emoji">🎬</span>
-            <strong>Movie Date</strong>
-            <small>Popcorn, cozy seats, hand holding</small>
-          </button>
-
-          <button class="option-card" onclick="choosePlace('Cafe hopping ☕', this)">
-            <span class="emoji">☕</span>
-            <strong>Cafe Hopping</strong>
-            <small>Cute photos and sweet desserts</small>
-          </button>
-
-          <button class="option-card" onclick="choosePlace('Museum date 🎨', this)">
-            <span class="emoji">🎨</span>
-            <strong>Museum Date</strong>
-            <small>Pretty exhibits and even prettier you</small>
-          </button>
-
-          <button class="option-card" onclick="choosePlace('Bowling fun 🎳', this)">
-            <span class="emoji">🎳</span>
-            <strong>Bowling</strong>
-            <small>Winner gets extra dessert</small>
-          </button>
-
-          <button class="option-card" onclick="choosePlace('Surprise adventure 🎁', this)">
-            <span class="emoji">🎁</span>
-            <strong>Surprise Me</strong>
-            <small>I plan everything for you</small>
-          </button>
+        <div class="selected-box" id="selectedPlaceBox">
+          No station selected yet 💭
         </div>
 
+        <div class="mrt-map-wrap">
+          <div class="mrt-map">
+            <!-- North-South Line -->
+            <div class="line ns-line"></div>
+            <button class="station ns" style="left: 18%; top: 22%;" onclick="choosePlace('Woodlands MRT 🚇', this)">Woodlands</button>
+            <button class="station ns" style="left: 30%; top: 34%;" onclick="choosePlace('Bishan MRT 🚇', this)">Bishan</button>
+            <button class="station ns" style="left: 43%; top: 47%;" onclick="choosePlace('Orchard MRT 🚇', this)">Orchard</button>
+            <button class="station ns interchange" style="left: 51%; top: 56%;" onclick="choosePlace('City Hall MRT 🚇', this)">City Hall</button>
+            <button class="station ns" style="left: 60%; top: 68%;" onclick="choosePlace('Marina Bay MRT 🚇', this)">Marina Bay</button>
+
+            <!-- East-West Line -->
+            <div class="line ew-line"></div>
+            <button class="station ew" style="left: 13%; top: 63%;" onclick="choosePlace('Jurong East MRT 🚇', this)">Jurong East</button>
+            <button class="station ew interchange" style="left: 51%; top: 56%;" onclick="choosePlace('City Hall MRT 🚇', this)">City Hall</button>
+            <button class="station ew" style="left: 64%; top: 52%;" onclick="choosePlace('Bugis MRT 🚇', this)">Bugis</button>
+            <button class="station ew" style="left: 80%; top: 50%;" onclick="choosePlace('Paya Lebar MRT 🚇', this)">Paya Lebar</button>
+            <button class="station ew" style="left: 91%; top: 47%;" onclick="choosePlace('Changi Airport MRT ✈️', this)">Changi</button>
+
+            <!-- Downtown Line -->
+            <div class="line dt-line"></div>
+            <button class="station dt" style="left: 23%; top: 78%;" onclick="choosePlace('Beauty World MRT 🚇', this)">Beauty World</button>
+            <button class="station dt" style="left: 40%; top: 70%;" onclick="choosePlace('Botanic Gardens MRT 🌿', this)">Botanic</button>
+            <button class="station dt" style="left: 64%; top: 52%;" onclick="choosePlace('Bugis MRT 🚇', this)">Bugis</button>
+            <button class="station dt" style="left: 74%; top: 40%;" onclick="choosePlace('Bencoolen MRT 🚇', this)">Bencoolen</button>
+
+            <!-- Thomson-East Coast sample -->
+            <div class="line te-line"></div>
+            <button class="station te" style="left: 58%; top: 31%;" onclick="choosePlace('Stevens MRT 🚇', this)">Stevens</button>
+            <button class="station te" style="left: 65%; top: 64%;" onclick="choosePlace('Gardens by the Bay MRT 🌸', this)">Gardens</button>
+            <button class="station te" style="left: 78%; top: 77%;" onclick="choosePlace('Marine Parade MRT 🌊', this)">Marine Parade</button>
+
+            <div class="map-label ns-label">NSL</div>
+            <div class="map-label ew-label">EWL</div>
+            <div class="map-label dt-label">DTL</div>
+            <div class="map-label te-label">TEL</div>
+          </div>
+        </div>
+
+        <p class="map-note">This is a simplified cute map, not the official MRT map.</p>
+
         <button id="placeNextBtn" class="primary-btn wide-btn disabled" onclick="goToFoodPage()" disabled>
-          Next: Food time 🍽️
+          Next: Choose food 🍽️
         </button>
       </div>
     </section>
 
-    <!-- Page 3: Choose food -->
+    <!-- Page 3: Choose food type -->
     <section id="page-3" class="page">
       <div class="glass-card">
         <div class="top-bar">
@@ -100,37 +121,37 @@
           <span class="step-pill">Step 3 of 3</span>
         </div>
 
-        <h2>What do you want to eat? 😋</h2>
+        <h2>What type of food do you want? 😋</h2>
         <p class="subtitle">Choose your craving and I will handle the rest.</p>
 
         <div class="option-grid food-grid">
-          <button class="option-card food" onclick="chooseFood('Sushi 🍣', this)">
+          <button class="option-card food" onclick="chooseFood('Japanese 🍣', this)">
             <span class="emoji">🍣</span>
-            <strong>Sushi</strong>
-            <small>Fresh, cute, and fancy</small>
+            <strong>Japanese</strong>
+            <small>Sushi, ramen, donburi</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Korean BBQ 🥩', this)">
+          <button class="option-card food" onclick="chooseFood('Korean 🥩', this)">
             <span class="emoji">🥩</span>
-            <strong>Korean BBQ</strong>
-            <small>I cook, you enjoy</small>
+            <strong>Korean</strong>
+            <small>KBBQ, army stew, fried chicken</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Pizza 🍕', this)">
-            <span class="emoji">🍕</span>
-            <strong>Pizza</strong>
-            <small>Cheesy date, cheesy us</small>
+          <button class="option-card food" onclick="chooseFood('Western 🍝', this)">
+            <span class="emoji">🍝</span>
+            <strong>Western</strong>
+            <small>Pasta, steak, burgers</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Hotpot 🍲', this)">
+          <button class="option-card food" onclick="chooseFood('Chinese / Hotpot 🍲', this)">
             <span class="emoji">🍲</span>
-            <strong>Hotpot</strong>
-            <small>Warm food, warm heart</small>
+            <strong>Chinese / Hotpot</strong>
+            <small>Warm soup and sharing food</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Dessert date 🍰', this)">
+          <button class="option-card food" onclick="chooseFood('Dessert Cafe 🍰', this)">
             <span class="emoji">🍰</span>
-            <strong>Dessert</strong>
+            <strong>Dessert Cafe</strong>
             <small>Cakes, waffles, ice cream</small>
           </button>
 
@@ -165,13 +186,25 @@
       noBtn.style.position = "fixed";
       noBtn.style.left = randomX + "px";
       noBtn.style.top = randomY + "px";
-      noBtn.textContent = "Nope 😆";
+      noBtn.style.zIndex = "200";
+      noBtn.textContent = "Try again 😆";
     }
 
     noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
     noBtn.addEventListener("click", moveNoButton);
 
+    function showYesPopup() {
+      document.getElementById("yesPopup").classList.remove("hidden");
+      createConfetti();
+    }
+
+    function closeYesPopup() {
+      document.getElementById("yesPopup").classList.add("hidden");
+    }
+
     function goToPage(pageNumber) {
+      closeYesPopup();
       document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
       document.getElementById(`page-${pageNumber}`).classList.add("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -179,8 +212,10 @@
 
     function choosePlace(place, element) {
       selectedPlace = place;
-      document.querySelectorAll(".place-grid .option-card").forEach(card => card.classList.remove("selected"));
+      document.querySelectorAll(".station").forEach(station => station.classList.remove("selected"));
       element.classList.add("selected");
+
+      document.getElementById("selectedPlaceBox").innerHTML = `Selected: <strong>${selectedPlace}</strong> 💕`;
 
       const nextBtn = document.getElementById("placeNextBtn");
       nextBtn.disabled = false;
@@ -199,7 +234,7 @@
 
       document.getElementById("finalResult").classList.remove("hidden");
       document.getElementById("summaryText").innerHTML =
-        `We are going for <strong>${selectedPlace}</strong><br>and eating <strong>${selectedFood}</strong>.<br><br>I cannot wait to see you 💕`;
+        `We are meeting at <strong>${selectedPlace}</strong><br>and eating <strong>${selectedFood}</strong>.<br><br>I cannot wait to see you 💕`;
 
       createConfetti();
     }
@@ -207,15 +242,16 @@
     function restart() {
       selectedPlace = "";
       selectedFood = "";
-      document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
+      document.querySelectorAll(".option-card, .station").forEach(card => card.classList.remove("selected"));
       document.getElementById("finalResult").classList.add("hidden");
+      document.getElementById("selectedPlaceBox").textContent = "No station selected yet 💭";
       document.getElementById("placeNextBtn").disabled = true;
       document.getElementById("placeNextBtn").classList.add("disabled");
       goToPage(1);
     }
 
     function createConfetti() {
-      for (let i = 0; i < 32; i++) {
+      for (let i = 0; i < 34; i++) {
         const confetti = document.createElement("span");
         confetti.className = "confetti";
         confetti.textContent = ["💖", "✨", "💕", "🌸", "💘"][Math.floor(Math.random() * 5)];
