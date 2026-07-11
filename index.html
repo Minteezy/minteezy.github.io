@@ -3,97 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Go On A Date With Me? 💖</title>
+  <title>Our Cute Date Plan 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hearts" aria-hidden="true">
-    <span>💖</span><span>💕</span><span>💗</span><span>💘</span><span>💝</span>
-    <span>🌸</span><span>✨</span><span>💞</span><span>🩷</span><span>🌷</span>
+  <div class="floating-bg" aria-hidden="true">
+    <span>💖</span><span>💕</span><span>🌸</span><span>✨</span><span>💘</span>
+    <span>🩷</span><span>💝</span><span>🌷</span><span>💞</span><span>⭐</span>
   </div>
 
   <main class="app">
-    <!-- Page 1: Date invitation -->
+    <!-- Page 1 -->
     <section id="page-1" class="page active">
-      <div class="glass-card hero-card">
-        <p class="eyebrow">A very important question...</p>
+      <div class="card hero-card">
+        <p class="badge">A tiny question for you...</p>
         <h1>Would you like to go on a date with me? 🥺💖</h1>
+        <p class="subtitle">I made this just for you. Choose carefully... or just choose yes 😆</p>
 
-        <div class="hero-visual">
-          <!-- Replace this GIF URL with your own photo/GIF if you want -->
-          <img
-            src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif"
-            alt="Cute romantic animation"
-          />
-          <div class="polaroid-note">You + Me = Best date ever ✨</div>
+        <div class="hero-photo">
+          <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Cute romantic gif" />
+          <p>You + Me = Best date ever ✨</p>
         </div>
 
         <div class="button-row">
-          <button class="primary-btn" onclick="showYesPopup()">Yes 💕</button>
+          <button class="primary-btn" onclick="goToPage(2)">Yes, of course 💕</button>
           <button id="noBtn" class="no-btn">No 😝</button>
         </div>
 
-        <p class="tiny-text">Tip: Try hovering the No button 😆</p>
+        <p class="small-note">Psst... the No button is a little shy.</p>
       </div>
     </section>
 
-    <!-- YES popup -->
-    <div id="yesPopup" class="popup-overlay hidden">
-      <div class="popup-card">
-        <button class="close-popup" onclick="goToPage(2)">×</button>
-        <h2>Yesssss!!! 💖💖💖</h2>
-        <p>I knew you would say yes hehe 🥰</p>
-        <img
-          class="popup-gif"
-          src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-          alt="Happy cute cat gif"
-        />
-        <button class="primary-btn wide-btn" onclick="goToPage(2)">Choose our MRT date place 🚇</button>
-      </div>
-    </div>					  
-    <!-- Page 2: Choose the date place -->
+    <!-- Page 2 -->
     <section id="page-2" class="page">
-      <div class="glass-card">
+      <div class="card">
         <div class="top-bar">
           <button class="back-btn" onclick="goToPage(1)">← Back</button>
-          <span class="step-pill">Step 2 of 3</span>
+          <span class="step">Step 2 of 3</span>
         </div>
 
         <h2>Yay! Choose our date place 💌</h2>
-        <p class="subtitle">Pick one place you want to go. I promise to make it special.</p>
+        <p class="subtitle">Pick where you want us to go. I will handle the rest.</p>
+
+        <div class="date-showcase">
+          <div class="mini-card big">
+            <span>🌅</span>
+            <div>
+              <strong>Romantic Date Mission</strong>
+              <p>Choose one place below and unlock the food page.</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <span>📸</span>
+            <div>
+              <strong>Cute Photos</strong>
+              <p>Mandatory couple pictures.</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <span>🎁</span>
+            <div>
+              <strong>Surprise</strong>
+              <p>Maybe there is a small surprise too.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="option-grid place-grid">
-          <button class="option-card" onclick="choosePlace('East Coast Park picnic 🌊', this)">
+          <button class="option-card beach" onclick="choosePlace('East Coast Park picnic 🌊', this)">
             <span class="emoji">🌊</span>
             <strong>East Coast Park</strong>
-            <small>Picnic, sea breeze, sunset walk</small>
+            <small>Sea breeze, picnic mat, sunset walk</small>
           </button>
 
-          <button class="option-card" onclick="choosePlace('Movie date 🎬', this)">
+          <button class="option-card movie" onclick="choosePlace('Movie date 🎬', this)">
             <span class="emoji">🎬</span>
             <strong>Movie Date</strong>
             <small>Popcorn, cozy seats, hand holding</small>
           </button>
 
-          <button class="option-card" onclick="choosePlace('Cafe hopping ☕', this)">
+          <button class="option-card cafe" onclick="choosePlace('Cafe hopping ☕', this)">
             <span class="emoji">☕</span>
             <strong>Cafe Hopping</strong>
-            <small>Cute photos and sweet desserts</small>
+            <small>Cute drinks, dessert, pretty photos</small>
           </button>
 
-          <button class="option-card" onclick="choosePlace('Museum date 🎨', this)">
+          <button class="option-card museum" onclick="choosePlace('Museum date 🎨', this)">
             <span class="emoji">🎨</span>
             <strong>Museum Date</strong>
-            <small>Pretty exhibits and even prettier you</small>
+            <small>Pretty exhibits and pretty memories</small>
           </button>
 
-          <button class="option-card" onclick="choosePlace('Bowling fun 🎳', this)">
+          <button class="option-card bowling" onclick="choosePlace('Bowling fun 🎳', this)">
             <span class="emoji">🎳</span>
             <strong>Bowling</strong>
             <small>Winner gets extra dessert</small>
           </button>
 
-          <button class="option-card" onclick="choosePlace('Surprise adventure 🎁', this)">
+          <button class="option-card picnic" onclick="choosePlace('Picnic date 🧺', this)">
+            <span class="emoji">🧺</span>
+            <strong>Picnic Date</strong>
+            <small>Snacks, blanket, and chill time</small>
+          </button>
+
+          <button class="option-card flyer" onclick="choosePlace('Singapore Flyer date 🎡', this)">
+            <span class="emoji">🎡</span>
+            <strong>Singapore Flyer</strong>
+            <small>City view and romantic vibes</small>
+          </button>
+
+          <button class="option-card surprise" onclick="choosePlace('Surprise adventure 🎁', this)">
             <span class="emoji">🎁</span>
             <strong>Surprise Me</strong>
             <small>I plan everything for you</small>
@@ -101,84 +120,107 @@
         </div>
 
         <button id="placeNextBtn" class="primary-btn wide-btn disabled" onclick="goToFoodPage()" disabled>
-          Next: Food time 🍽️
+          Next: Choose food 🍽️
         </button>
       </div>
     </section>
 
-    <!-- Page 3: Choose food -->
+    <!-- Page 3 -->
     <section id="page-3" class="page">
-      <div class="glass-card">
+      <div class="card">
         <div class="top-bar">
           <button class="back-btn" onclick="goToPage(2)">← Back</button>
-          <span class="step-pill">Step 3 of 3</span>
+          <span class="step">Step 3 of 3</span>
         </div>
 
         <h2>What do you want to eat? 😋</h2>
-        <p class="subtitle">Choose your craving and I will handle the rest.</p>
+        <p class="subtitle">Choose your craving. Your boyfriend will arrange it.</p>
 
         <div class="option-grid food-grid">
-          <button class="option-card food" onclick="chooseFood('Sushi 🍣', this)">
+          <button class="option-card" onclick="chooseFood('Sushi 🍣', this)">
             <span class="emoji">🍣</span>
             <strong>Sushi</strong>
             <small>Fresh, cute, and fancy</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Korean BBQ 🥩', this)">
+          <button class="option-card" onclick="chooseFood('Korean BBQ 🥩', this)">
             <span class="emoji">🥩</span>
             <strong>Korean BBQ</strong>
             <small>I cook, you enjoy</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Pizza 🍕', this)">
+          <button class="option-card" onclick="chooseFood('Pizza 🍕', this)">
             <span class="emoji">🍕</span>
             <strong>Pizza</strong>
-            <small>Cheesy date, cheesy us</small>
+            <small>Cheesy food for cheesy us</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Hotpot 🍲', this)">
+          <button class="option-card" onclick="chooseFood('Hotpot 🍲', this)">
             <span class="emoji">🍲</span>
             <strong>Hotpot</strong>
             <small>Warm food, warm heart</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('Dessert date 🍰', this)">
+          <button class="option-card" onclick="chooseFood('Dessert date 🍰', this)">
             <span class="emoji">🍰</span>
             <strong>Dessert</strong>
             <small>Cakes, waffles, ice cream</small>
           </button>
 
-          <button class="option-card food" onclick="chooseFood('You choose, princess 👑', this)">
+          <button class="option-card" onclick="chooseFood('Ramen 🍜', this)">
+            <span class="emoji">🍜</span>
+            <strong>Ramen</strong>
+            <small>Comfort food date</small>
+          </button>
+
+          <button class="option-card" onclick="chooseFood('Thai food 🌶️', this)">
+            <span class="emoji">🌶️</span>
+            <strong>Thai Food</strong>
+            <small>Spicy like our love story</small>
+          </button>
+
+          <button class="option-card" onclick="chooseFood('You choose, princess 👑', this)">
             <span class="emoji">👑</span>
             <strong>You Choose</strong>
             <small>Your wish is my command</small>
           </button>
         </div>
-
-        <div id="finalResult" class="final-result hidden">
-          <h3>It is a date! 💖</h3>
-          <p id="summaryText"></p>
-          <button class="primary-btn" onclick="restart()">Choose again 🔁</button>
-        </div>
       </div>
     </section>
   </main>
 
+  <!-- Final popup -->
+  <div id="finalModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <div class="modal-gif">
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Happy celebration gif" />
+      </div>
+      <h2>Yessss! It is a date! 💖</h2>
+      <p id="modalText"></p>
+      <p class="screenshot-note">💌 Screenshot this and send it to your boyfriend 😆</p>
+      <div class="modal-actions">
+        <button class="primary-btn" onclick="copyPlan()">Copy my choice 💌</button>
+        <button class="secondary-btn" onclick="restart()">Choose again 🔁</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     let selectedPlace = "";
     let selectedFood = "";
+    let copiedText = "";
 
     const noBtn = document.getElementById("noBtn");
 
     function moveNoButton() {
-      const maxX = window.innerWidth - noBtn.offsetWidth - 30;
-      const maxY = window.innerHeight - noBtn.offsetHeight - 30;
-      const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-      const randomY = Math.max(10, Math.floor(Math.random() * maxY));
-
+      const maxX = window.innerWidth - noBtn.offsetWidth - 25;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 25;
+      const x = Math.max(10, Math.floor(Math.random() * maxX));
+      const y = Math.max(10, Math.floor(Math.random() * maxY));
       noBtn.style.position = "fixed";
-      noBtn.style.left = randomX + "px";
-      noBtn.style.top = randomY + "px";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
       noBtn.textContent = "Nope 😆";
     }
 
@@ -211,33 +253,50 @@
       document.querySelectorAll(".food-grid .option-card").forEach(card => card.classList.remove("selected"));
       element.classList.add("selected");
 
-      document.getElementById("finalResult").classList.remove("hidden");
-      document.getElementById("summaryText").innerHTML =
-        `We are going for <strong>${selectedPlace}</strong><br>and eating <strong>${selectedFood}</strong>.<br><br>I cannot wait to see you 💕`;
+      copiedText = `I chose:\n📍 ${selectedPlace}\n🍽️ ${selectedFood}\n\nGet ready ❤️`;
 
+      document.getElementById("modalText").innerHTML =
+        `We are going to:<br><strong>📍 ${selectedPlace}</strong><br><br>` +
+        `And eating:<br><strong>🍽️ ${selectedFood}</strong><br><br>` +
+        `I cannot wait to see you 💕`;
+
+      document.getElementById("finalModal").classList.remove("hidden");
       createConfetti();
+    }
+
+    function closeModal() {
+      document.getElementById("finalModal").classList.add("hidden");
     }
 
     function restart() {
       selectedPlace = "";
       selectedFood = "";
+      closeModal();
       document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
-      document.getElementById("finalResult").classList.add("hidden");
-      document.getElementById("placeNextBtn").disabled = true;
-      document.getElementById("placeNextBtn").classList.add("disabled");
+      const nextBtn = document.getElementById("placeNextBtn");
+      nextBtn.disabled = true;
+      nextBtn.classList.add("disabled");
       goToPage(1);
     }
 
+    function copyPlan() {
+      navigator.clipboard.writeText(copiedText).then(() => {
+        alert("Copied! Send it to your boyfriend 💖");
+      }).catch(() => {
+        alert("Copy failed, but you can screenshot this page 💖");
+      });
+    }
+
     function createConfetti() {
-      for (let i = 0; i < 32; i++) {
+      for (let i = 0; i < 45; i++) {
         const confetti = document.createElement("span");
         confetti.className = "confetti";
-        confetti.textContent = ["💖", "✨", "💕", "🌸", "💘"][Math.floor(Math.random() * 5)];
+        confetti.textContent = ["💖", "✨", "💕", "🌸", "💘", "🩷"][Math.floor(Math.random() * 6)];
         confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
-        confetti.style.fontSize = 18 + Math.random() * 20 + "px";
+        confetti.style.animationDuration = 2 + Math.random() * 2.5 + "s";
+        confetti.style.fontSize = 16 + Math.random() * 24 + "px";
         document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 4500);
+        setTimeout(() => confetti.remove(), 5000);
       }
     }
   </script>
